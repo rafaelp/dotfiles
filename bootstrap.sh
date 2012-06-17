@@ -2,12 +2,11 @@
 
 git pull
 
-rm -f "$HOME/.bash_profile"
-rm -f "$HOME/.bashrc"
-rm -f "$HOME/.pryrc"
-
-ln -s "$(pwd)/bash_profile" "$HOME/.bash_profile"
-ln -s "$(pwd)/bashrc" "$HOME/.bashrc"
-ln -s "$(pwd)/pryrc" "$HOME/.pryrc"
+for FILE in bash_profile pryrc
+do
+	rm -f "$HOME/.$FILE"
+	ln -s "$(pwd)/$FILE" "$HOME/.$FILE"
+	echo 
+done
 
 source ~/.bash_profile

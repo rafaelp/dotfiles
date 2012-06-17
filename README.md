@@ -1,5 +1,5 @@
 # My dotfiles
 
 ```bash
-git clone git://github.com/tapajos/dotfiles.git && cd dotfiles && ./bootstrap.sh
+git clone git://github.com/tapajos/dotfiles.git ~/dotfiles && cd ~/dotfiles && ./bootstrap.sh
 ```
