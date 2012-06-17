@@ -1,4 +1,3 @@
-#git
 alias gb="git branch -a"
 alias gc="git commit -a"
 alias gd="git diff | mate"
