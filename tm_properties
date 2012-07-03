@@ -1,0 +1,13 @@
+fontSize         = 12
+
+[ .git/COMMIT_EDITMSG ]
+softWrap         = true
+spellChecking    = true
+spellingLanguage = 'en'
+
+[ "/usr/include/{**/,}*" ]
+tabSize          = 8
+
+[ source.js ]
+softTabs         = true
+tabSize          = 2
