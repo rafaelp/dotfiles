@@ -1,3 +1,5 @@
+Pry.config.editor = "mate -w"
+
 Pry.config.should_load_plugins = false
 Pry.plugins["doc"].activate!
 Pry.plugins["nav"].activate!
@@ -35,9 +37,10 @@ rescue LoadError => err
   puts "no awesome_print :("
 end
 
-if defined?(PryNav)
+begin
   Pry.commands.alias_command 'c', 'continue'
   Pry.commands.alias_command 's', 'step'
   Pry.commands.alias_command 'n', 'next'
   Pry.commands.alias_command 'l', 'whereami'
+rescue
 end
