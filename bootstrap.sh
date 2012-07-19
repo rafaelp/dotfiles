@@ -2,7 +2,7 @@
 
 git pull
 
-for FILE in bash_profile pryrc tm_properties
+for FILE in bash_profile pryrc tm_properties gitconfig
 do
 	rm -f "$HOME/.$FILE"
 	ln -s "$(pwd)/$FILE" "$HOME/.$FILE"
