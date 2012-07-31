@@ -1,5 +1,4 @@
 alias migrar="rake db:migrate db:test:prepare"
-alias migrate="migrar"
 alias int="RAILS_ENV=test rake integrate"
 
 function opengem {
