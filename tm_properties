@@ -1,5 +1,10 @@
 fontSize         = 12
 
+# Exclude File
+myExtraExcludes = "log,logs, tmp,*sqlite3"
+excludeInFileChooser  = "{$excludeInFileChooser, $myExtraExcludes}"
+excludeInFolderSearch = "{$excludeInFolderSearch, $myExtraExcludes}"
+
 [ .git/COMMIT_EDITMSG ]
 softWrap         = true
 spellChecking    = true
@@ -11,3 +16,19 @@ tabSize          = 8
 [ source.js ]
 softTabs         = true
 tabSize          = 2
+
+[ text.html.erb ]
+softTabs = true
+softWrap = false
+tabSize = 2
+
+[ source.ruby ]
+softTabs         = true
+tabSize          = 2
+
+[ source.python ]
+softTabs         = true
+tabSize          = 4
+
+[ "{README,INSTALL,LICENSE,TODO}" ]
+fileType         = "text.plain"
