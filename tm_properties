@@ -32,3 +32,8 @@ tabSize          = 4
 
 [ "{README,INSTALL,LICENSE,TODO}" ]
 fileType         = "text.plain"
+
+# Force spaces
+[ source.yaml ]
+softTabs = true
+tabSize = 2

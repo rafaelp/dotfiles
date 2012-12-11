@@ -21,6 +21,14 @@ function rake {
   fi
 }
 
+function cap {
+  if [ -e Gemfile ]; then
+    time bundle exec cap $@
+  else
+    time `which cap` $@
+  fi
+}
+
 function rspec {
   if [ -e Gemfile ]; then
     time bundle exec rspec $@
