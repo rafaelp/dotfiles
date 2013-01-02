@@ -1,4 +1,4 @@
-Pry.config.editor = "mate -w"
+Pry.config.editor = "subl -n -w"
 
 Pry.config.should_load_plugins = false
 Pry.plugins["doc"].activate!

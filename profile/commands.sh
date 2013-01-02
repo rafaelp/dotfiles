@@ -4,3 +4,5 @@ alias dns="sudo killall -HUP mDNSResponder"
 # Before Lion
 # alias dns="dscacheutil -flushcache"
 alias ls="ls -h"
+
+alias e="subl"
