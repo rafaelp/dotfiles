@@ -1,9 +1,4 @@
 alias migrar="rake db:migrate db:test:prepare"
-alias int="RAILS_ENV=test rake integrate"
-
-function opengem {
-	mate `bundle show $@`
-}
 
 function rails {
 	if [ -e script/rails ]; then

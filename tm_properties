@@ -1,9 +1,6 @@
 fontSize         = 12
 
-# Exclude File
-myExtraExcludes = "log,logs, tmp,*sqlite3"
-excludeInFileChooser  = "{$excludeInFileChooser, $myExtraExcludes}"
-excludeInFolderSearch = "{$excludeInFolderSearch, $myExtraExcludes}"
+excludeInFolderSearch = "{$excludeInFolderSearch,log,tmp}"
 
 [ .git/COMMIT_EDITMSG ]
 softWrap         = true
