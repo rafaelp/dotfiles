@@ -1,28 +1,26 @@
 [user]
-	name = Marcos Tapajós
-	email = tapajos@gmail.com
-	
+  name = Marcos Tapajós
+  email = tapajos@gmail.com
 [push]
-	default = current
-	
+  default = current
 [alias]
   co = checkout
   l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
   lol = log --pretty=oneline --abbrev-commit --graph --decorate
-  
 [apply]
   whitespace = warn
-  
 [color]
   diff = auto
   status = auto
   branch = auto
   ui = true
-
 [help]
   autocorrect = 1
-
 [status]
   submodule = 1
 [core]
-	editor = mate -w
+  editor = mate -w
+[rerere]
+  enabled = true
+[branch]
+  autosetuprebase = always

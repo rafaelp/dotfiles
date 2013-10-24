@@ -1,4 +1,3 @@
-alias cd..="cd .."
 # Lion and ML
 alias dns="sudo killall -HUP mDNSResponder"
 # Before Lion
