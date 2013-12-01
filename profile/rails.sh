@@ -1,47 +1,55 @@
-alias migrar="rake db:migrate db:test:prepare"
+alias clone="rake db:test:prepare"
+alias load="rake db:fixtures:load"
+alias sload="rake spec:db:fixtures:load"
+alias migrate="rake db:migrate && clone"
+alias int="rake integrate"
 
 function rails {
-	if [ -e script/rails ]; then
-		script/rails $@
-	else
-		`which rails` $@
-	fi
+  if [ -e script/rails ]; then
+    if [ -n "`which foreman`" ]; then
+      foreman run script/rails $@
+    else
+      script/rails $@
+    fi
+  else
+    `which rails` $@
+  fi
 }
 
 function rake {
   if [ -e Gemfile ]; then
-    time bundle exec rake $@
+    bundle exec rake $@
   else
-    time `which rake` $@
+    `which rake` $@
   fi
 }
 
-function cap {
+function heroku {
   if [ -e Gemfile ]; then
-    time bundle exec cap $@
+    bundle exec heroku $@
   else
-    time `which cap` $@
+    `which heroku` $@
   fi
 }
 
 function rspec {
   if [ -e Gemfile ]; then
-    time bundle exec rspec $@
+    bundle exec rspec $@
   else
-    time `which rspec` $@
+    `which rspec` $@
   fi
 }
 
 function fs {
-	bundle exec foreman start -f Procfile $@
+  bundle exec foreman start -f Procfile $@
 }
 
 function s {
-	if [ -e script/rails ]; then
-		script/rails server $@
-	else
-		script/server $@
-	fi
+  if [ -e script/rails ]; then
+    script/rails server $@
+  else
+    script/server $@
+  fi
 }
 
 function c {
