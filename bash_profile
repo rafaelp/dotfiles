@@ -1,4 +1,5 @@
-#Bash profile by Tapajos
+# Bash profile by Tapajos
+# Modified by Rafael Lima
 
 if [ "$PS1" ]; then
 	for resource in $HOME/dotfiles/profile/*; do

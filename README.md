@@ -1,5 +1,7 @@
 # My dotfiles
 
 ```bash
-git clone git://github.com/tapajos/dotfiles.git ~/dotfiles && cd ~/dotfiles && ./bootstrap.sh
+git clone git://github.com/rafaelp/dotfiles.git ~/dotfiles && cd ~/dotfiles && ./bootstrap.sh
 ```
+
+Remember to change your user name and email on ~/.gitconfig
