@@ -9,4 +9,10 @@ do
 	echo 
 done
 
+mkdir -p "$HOME/bin"
+for FILE in hh hp hs
+do
+	ln -s "$(pwd)/bin/$FILE" "$HOME/bin/$FILE"
+done
+
 source ~/.bash_profile
