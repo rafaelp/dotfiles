@@ -24,13 +24,14 @@ function rake {
   fi
 }
 
-function heroku {
-  if [ -e Gemfile ]; then
-    bundle exec heroku $@
-  else
-    `which heroku` $@
-  fi
-}
+# Commented because Heroku Toolbet use heroku with its own Ruby
+# function heroku {
+#   if [ -e Gemfile ]; then
+#     bundle exec heroku $@
+#   else
+#     `which heroku` $@
+#   fi
+# }
 
 function rspec {
   if [ -e Gemfile ]; then
