@@ -1,8 +1,3 @@
-function hh {
-  heroku $@ --app "`basename $PWD`"
-}
-export -f hh
-
 function hs {
   heroku $@ --app "`basename $PWD`-staging"
 }
@@ -13,14 +8,14 @@ function hp {
 }
 export -f hp
 
-function herokuhelabs {
+function hh {
   heroku accounts:set helabs
-  heroku $@ -r helabs
+  heroku $@
 }
-export -f herokuhelabs
+export -f hh
 
-function herokubielsystems {
+function hb {
   heroku accounts:set bielsystems
-  heroku $@ -r bielsystems
+  heroku $@
 }
-export -f herokubielsystems
+export -f hb
