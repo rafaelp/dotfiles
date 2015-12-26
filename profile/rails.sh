@@ -1,3 +1,6 @@
+export RAILS_ENV=development
+export RACK_ENV=development
+
 alias clone="rake db:test:prepare"
 alias load="rake db:fixtures:load"
 alias sload="rake spec:db:fixtures:load"
