@@ -6,3 +6,6 @@ if [ "$PS1" ]; then
 		source "$resource"
 	done
 fi
+
+export PATH="/usr/local/opt/libiconv/bin:$PATH"
+
