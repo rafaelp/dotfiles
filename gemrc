@@ -2,11 +2,11 @@
 :benchmark: false
 :verbose: true
 :update_sources: true
-gem: --no-ri --no-rdoc
-install: --env-shebang
+gem: --no-ri --no-rdoc --no-document
+install: --env-shebang --no-ri --no-rdoc
 gemcutter_key: 66...cf
 :sources: 
 - https://rubygems.org/
 :backtrace: false
 :bulk_threshold: 1000
-update: --env-shebang
+update: --env-shebang --no-ri --no-rdoc
