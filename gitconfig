@@ -7,6 +7,7 @@
   co = checkout
   l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
   lol = log --pretty=oneline --abbrev-commit --graph --decorate
+  gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs git branch -D"
 [apply]
   whitespace = warn
 [color]
@@ -19,14 +20,12 @@
 [status]
   submodule = 1
 [core]
-  editor = mate -w
+  editor = code
 	excludesfile = /Users/rafael/.gitignore_global
 [rerere]
   enabled = true
 [branch]
   autosetuprebase = always
-[heroku]
-[heroku]
 [github]
 	user = rafaelp
 [filter "hawser"]

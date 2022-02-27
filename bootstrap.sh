@@ -1,12 +1,12 @@
 #!/bin/bash
 
-git pull
+#git pull
 
-for FILE in bash_profile pryrc tm_properties gitconfig irbrc my.cnf gemrc
+for FILE in pryrc tm_properties gitconfig irbrc my.cnf gemrc zshrc zprofile asdfrc
 do
 	rm -f "$HOME/.$FILE"
 	ln -s "$(pwd)/$FILE" "$HOME/.$FILE"
-	echo
+	echo $FILE;
 done
 
-source ~/.bash_profile
+source ~/.zshrc

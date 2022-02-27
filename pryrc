@@ -1,17 +1,8 @@
 Pry.config.editor = "subl -n -w"
 
 Pry.config.should_load_plugins = false
-Pry.plugins["doc"].activate!
-Pry.plugins["nav"].activate!
 
 #Pry.config.history.file = "~/.irb-history"
-
-Pry.config.prompt = proc do |obj, level, _|
-  prompt = ""
-  prompt << "#{Rails.version}@" if defined?(Rails)
-  prompt << "#{RUBY_VERSION}"
-  "#{prompt} (#{obj})> "
-end
 
 if defined?(Rails)
   begin

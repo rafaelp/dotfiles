@@ -1,0 +1,1 @@
+. /Users/rafael/.pack/completion

@@ -1,36 +1,29 @@
 alias clone="rake db:test:prepare"
-alias load="rake db:fixtures:load"
-alias sload="rake spec:db:fixtures:load"
 alias migrate="rake db:migrate && clone"
-alias int="rake integrate"
 
 function run {
-  if [ -e docker-compose.yml ]; then
-    docker-compose run --rm web $@
+  if [ -e tmp/enable-docker-compose.txt ]; then
+    docker-compose run --rm app $@
   else
     `which run` $@
   fi
 }
 
 function rails {
-  if [ -e script/rails ]; then
-    if [ -e docker-compose.yml ]; then
-      docker-compose run --rm web script/rails $@
-    else
-      if [ -n "`which foreman`" ]; then
-        foreman run script/rails $@
-      else
-        script/rails $@
-      fi
-    fi
+  if [ -e tmp/enable-docker-compose.txt ]; then
+    docker-compose run --rm app bundle exec rails $@
   else
-    `which rails` $@
+    if [ -e Gemfile ]; then
+      bundle exec rails $@
+    else
+      `which rails` $@
+    fi
   fi
 }
 
 function rake {
-  if [ -e docker-compose.yml ]; then
-    docker-compose run --rm web bundle exec rake $@
+  if [ -e tmp/enable-docker-compose.txt ]; then
+    docker-compose run --rm app bundle exec rake $@
   else
     if [ -e Gemfile ]; then
       bundle exec rake $@
@@ -41,8 +34,8 @@ function rake {
 }
 
 function bundle {
-  if [ -e docker-compose.yml ]; then
-    docker-compose run --rm web bundle $@
+  if [ -e tmp/enable-docker-compose.txt ]; then
+    docker-compose run --rm app bundle $@
   else
     `which bundle` $@
   fi
@@ -58,8 +51,8 @@ function bundle {
 # }
 
 function rspec {
-  if [ -e docker-compose.yml ]; then
-    docker-compose run --rm web bundle exec rspec $@
+  if [ -e tmp/enable-docker-compose.txt ]; then
+    docker-compose run --rm app bundle exec rspec $@
   else
     if [ -e Gemfile ]; then
       bundle exec rspec $@
