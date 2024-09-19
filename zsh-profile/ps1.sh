@@ -28,4 +28,4 @@ show_folder_glyph () {
     fi
 }
 
-PS1=$'%{%F{green}%}%n %{%F{blue}%}$(show_folder_glyph) %1~ %{%F{yellow}%}\$vcs_info_msg_0_%{%f%}%# '
+PS1=$'%{%F{green}%}%n %{%F{cyan}%}$(show_folder_glyph) %1~ %{%F{yellow}%}\$vcs_info_msg_0_%{%f%}%# '

@@ -3,6 +3,7 @@
   email = contato@rafael.adm.br
 [push]
   default = current
+	autoSetupRemote = true
 [alias]
   co = checkout
   l = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
@@ -32,3 +33,5 @@
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
 	required = true
+[init]
+	defaultBranch = main
