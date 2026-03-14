@@ -1,6 +1,16 @@
 [user]
   name = Rafael Lima
   email = contato@rafael.adm.br
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAYf6D20X8NGGQaIDRmO2KRhTydMUxopxVXWX/bPn6Px
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
+
 [push]
   default = current
 	autoSetupRemote = true
@@ -21,7 +31,7 @@
 [status]
   submodule = 1
 [core]
-  editor = code
+	editor = code --wait
 	excludesfile = /Users/rafael/.gitignore_global
 [rerere]
   enabled = true
@@ -35,3 +45,9 @@
 	required = true
 [init]
 	defaultBranch = main
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
