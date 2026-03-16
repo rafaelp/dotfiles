@@ -1,3 +1,2 @@
-export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
-export LDFLAGS="-L/opt/homebrew/opt/postgresql@18/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/postgresql@18/include"
+# PostgreSQL is managed by mise - paths are set automatically via .tool-versions
+# If you need explicit paths: $(mise where postgres)/bin, lib, include
